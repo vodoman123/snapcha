@@ -30,7 +30,7 @@ from snapchat import Snapchat
 from Captcha.Visual.Tests import PseduoGimpy
 
 s = Snapchat()
-s.login('sauth1234', 'PingWord123')
+s.login('', '')
 
 g = PseudoGimpy()
 
