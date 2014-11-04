@@ -14,10 +14,10 @@ sys.path.insert(1, 'app/libs')
 from snapchat import Snapchat
 
 s = Snapchat()
-s.login('sauth1', 'master123')
+s.login('', '')
 
-conn = S3Connection('AKIAIP5X6OBUBDHP6CXA', 'pBPDQlNcPeAr3vEAC8LZKEXgR0TGR9PLpNeSvxR8')
-snapchat_captcha = conn.get_bucket('snapcha')
+conn = S3Connection('', '')
+snapchat_captcha = conn.get_bucket('')
 
 @app.route('/')
 def index():
@@ -32,7 +32,7 @@ def snapcha():
 	choose_captcha = str(random.choice(os.listdir(images_folder)))
 	
 	media_id = s.upload(Snapchat.MEDIA_IMAGE, os.path.join(images_folder,choose_captcha))
-	#media_id = s.upload(Snapchat.MEDIA_IMAGE, snapchat_captcha.get_key('captchas/addition.jpg').get_contents_as_string())
+	#media_id = s.upload(Snapchat.MEDIA_IMAGE, snapchat_captcha.get_key('').get_contents_as_string())
 	s.send(media_id, snap_name)
 	
 	return redirect(url_for('result'))
