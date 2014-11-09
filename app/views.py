@@ -14,10 +14,10 @@ sys.path.insert(1, 'app/libs')
 from snapchat import Snapchat
 
 s = Snapchat()
-s.login('', '')
+#s.login('', '')
 
-conn = S3Connection('', '')
-snapchat_captcha = conn.get_bucket('')
+#conn = S3Connection('', '')
+#snapchat_captcha = conn.get_bucket('')
 
 @app.route('/')
 def index():
